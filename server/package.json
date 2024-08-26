@@ -1,0 +1,42 @@
+{
+  "name": "real-time-chat-app",
+  "version": "1.0.0",
+  "description": "A real-time chat application built with React, Node.js, and WebSocket.",
+  "main": "server/src/server.ts",
+  "scripts": {
+    "start": "ts-node server/src/server.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
+    "build": "tsc -p server/",
+    "test": "npm test"
+  },
+  "keywords": [
+    "real-time",
+    "chat",
+    "application",
+    "react",
+    "node.js",
+    "websocket"
+  ],
+  "author": "Ousman Didi <ousman.didibela@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.4",
+    "websocket": "^1.0.35"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^22.5.0",
+    "@types/ws": "^8.5.12",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
