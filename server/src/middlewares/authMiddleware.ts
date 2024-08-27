@@ -2,14 +2,15 @@
 import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 
-interface AuthRequest extends Request {
+export interface AuthenticatedRequest extends Request {
   user?: {
     id: string;
   };
+  file?: Express.Multer.File; // Add this to handle file uploads
 }
 
 export const authMiddleware = (
-  req: AuthRequest,
+  req: AuthenticatedRequest,
   res: Response,
   next: NextFunction
 ) => {
@@ -34,4 +35,3 @@ export const authMiddleware = (
 };
 
 export default authMiddleware;
-
