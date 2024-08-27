@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![Dependencies](https://img.shields.io/david/Ousman37/real-time-chat-app.svg)
+![GitHub Repo Stars](https://img.shields.io/github/stars/Ousman37/real-time-chat-app?style=social)
 ![React](https://img.shields.io/badge/react-18.3.1-61DAFB.svg)
 ![Node.js](https://img.shields.io/badge/node.js-22.5.0-43853D.svg)
 
