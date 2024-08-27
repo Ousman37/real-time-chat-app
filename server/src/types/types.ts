@@ -1,6 +1,7 @@
 import { Request } from "express";
 
 export interface AuthenticatedRequest extends Request {
+  file: any;
   user?: any; // Replace `any` with the actual user type if you have a User interface/model
 }
 
