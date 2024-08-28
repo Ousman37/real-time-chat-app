@@ -4,6 +4,7 @@ import connectDB from "./config/db";
 import authRoutes from "./routes/authRoutes";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from "path";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -37,6 +38,14 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '../../client/build')));
+
+// Anything that doesn't match the API routes, send back to the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+});
+
 // Handle 404 errors
 app.use((req, res, next) => {
   res.status(404).json({ message: "Route not found" });
@@ -49,3 +58,4 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 export default app; // Export the configured Express app
+
