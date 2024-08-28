@@ -1,10 +1,20 @@
 // server/server.ts
 import http from "http";
+import path from "path";
+import express from "express";
 import { Server, Socket } from "socket.io";
 import app from "./app"; // Import the Express app
 import Message from "./models/Message"; // Import the Message model
 
 const PORT = process.env.PORT || 5001;
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, "../../client/build")));
+
+// Anything that doesn't match the API routes, send back to the React app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../client/build", "index.html"));
+});
 
 // Create the HTTP server using the Express app
 const server = http.createServer(app);
